@@ -1,7 +1,8 @@
 from __future__ import absolute_import
 
 try:
-    import tensorflow as tf
+    import tensorflow.compat.v1 as tf
+    tf.disable_v2_behavior()
     _HAVE_TF = True
 except ImportError:
     _HAVE_TF = False

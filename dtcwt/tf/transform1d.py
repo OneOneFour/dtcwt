@@ -12,7 +12,8 @@ from dtcwt.tf import Pyramid
 from dtcwt.tf.lowlevel import coldfilt, colfilter, colifilt
 
 try:
-    import tensorflow as tf
+    import tensorflow.compat.v1 as tf
+    tf.disable_v2_behavior()
     from tensorflow.python.framework import dtypes
     tf_dtypes = frozenset(
         [dtypes.float32, dtypes.float64, dtypes.int8, dtypes.int16,
